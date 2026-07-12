@@ -13,7 +13,7 @@ This project demonstrates the implementation of the five most common performance
 - ⚡ Spike Test
 - ⏳ Soak Test
 
-- | Test Type | Purpose |
+| Test Type | Purpose |
 |-----------|---------|
 | 🟢 Smoke Test | Verify the application is available and responsive before executing more intensive performance tests. |
 | 🔵 Load Test | Measure application performance under the expected number of concurrent users and normal workload. |
