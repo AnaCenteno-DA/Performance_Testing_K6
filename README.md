@@ -236,22 +236,10 @@ Overall, the application proved capable of handling different traffic patterns w
 
 # 📁 Project Structure
 
-QA_Project_K6_Performance/
-│
-├── scripts/
-│   ├── smoke-test.js
-│   ├── load-test.js
-│   ├── stress-test.js
-│   ├── spike-test.js
-│   └── soak-test.js
-│
-├── outils/
-│   └── auth.js
-│
-└── README.md
-```
+<img width="193" height="246" alt="image" src="https://github.com/user-attachments/assets/ca6c8c0a-3640-4b18-9d07-dfc68fd307fe" />
 
-------
+
+---
 
 # ▶️ How to Execute Tests
 
@@ -267,6 +255,7 @@ k6 run .\scripts\stress-test.js
 k6 run .\scripts\spike-test.js
 
 k6 run .\scripts\soak-test.js
+
 ---
 
 
