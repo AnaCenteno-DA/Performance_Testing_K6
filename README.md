@@ -10,6 +10,8 @@ This project demonstrates the implementation of the five most common performance
 
 The performance tests were executed against the public demo application **BlazeDemo**, simulating different traffic patterns to evaluate the application's availability, responsiveness, stability, and behavior under load.
 
+Additionally, the project was refactored to improve code maintainability by extracting common logic into reusable helper functions, reducing code duplication across performance test scripts.
+
 ### Performance Test Types
 
 | Test Type | Purpose |
@@ -27,6 +29,42 @@ The performance tests were executed against the public demo application **BlazeD
 - Grafana K6
 - JavaScript (ES6)
 - Visual Studio Code
+
+---
+
+# 🔄 Code Refactoring & Improvements
+
+As part of the Automation Builder Workshop, duplicated logic across performance test scripts was identified and refactored.
+
+## Before Refactoring
+
+Each performance test contained repeated logic for:
+
+- HTTP requests
+- Response validations
+- Common execution steps
+
+This approach increased maintenance effort because any future change needed to be applied in multiple files.
+
+## After Refactoring
+
+Reusable functionality was extracted into a shared helper:
+outils/
+└── auth.js
+
+---
+
+Performance scripts were updated to consume reusable functions instead of duplicating the same code.
+
+### Benefits
+
+✅ Reduced duplicated code  
+✅ Improved maintainability  
+✅ Better scalability for future test scenarios  
+✅ Cleaner and easier-to-read performance scripts  
+✅ Centralized common validation logic  
+
+All five performance tests were executed successfully after the refactoring process.
 
 ---
 
@@ -190,7 +228,7 @@ Key observations include:
 - ✅ No HTTP request failures were detected.
 - ✅ All functional checks passed successfully.
 - ✅ The application remained stable during Stress, Spike, and Soak tests.
-- ⚠️ During the Load Test, the configured response time threshold (**P95 < 500 ms**) was exceeded, suggesting that response times may increase under expected workloads.
+- ⚠️ During the Load Test, the configured response time threshold (P95 < 500 ms) was exceeded, suggesting that response times may increase under expected workloads.
 
 Overall, the application proved capable of handling different traffic patterns while maintaining service availability and operational stability.
 
@@ -198,7 +236,6 @@ Overall, the application proved capable of handling different traffic patterns w
 
 # 📁 Project Structure
 
-```text
 QA_Project_K6_Performance/
 │
 ├── scripts/
@@ -208,10 +245,30 @@ QA_Project_K6_Performance/
 │   ├── spike-test.js
 │   └── soak-test.js
 │
+├── outils/
+│   └── auth.js
+│
 └── README.md
 ```
 
+------
+
+# ▶️ How to Execute Tests
+
+Run each performance scenario using K6:
+
+```bash
+k6 run .\scripts\smoke-test.js
+
+k6 run .\scripts\load-test.js
+
+k6 run .\scripts\stress-test.js
+
+k6 run .\scripts\spike-test.js
+
+k6 run .\scripts\soak-test.js
 ---
+
 
 # 🔗 Related Projects
 
