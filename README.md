@@ -50,8 +50,7 @@ This approach increased maintenance effort because any future change needed to b
 
 Reusable functionality was extracted into a shared helper:
 
-outils/
-└── auth.js
+<img width="106" height="55" alt="image" src="https://github.com/user-attachments/assets/757488f1-bf82-4e85-a94d-ff43cc9bdd56" />
 
 ---
 
