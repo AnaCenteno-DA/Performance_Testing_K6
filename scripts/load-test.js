@@ -1,8 +1,7 @@
 //Ejemplo de Load Test
 import http from 'k6/http';
-
-//funciones para validar y espera de VU
-import { check, sleep } from 'k6';
+import { visitHomePage } from '../outils/auth.js';
+import { sleep } from 'k6';
 
 
 //Stages 
@@ -32,15 +31,10 @@ export const options = {
 
 };
 
-// el corazon del script
 export default function () {
-   //peticion al http
-  const response = http.get('https://blazedemo.com/');
 
-  //check de validacion 
-  check(response, {
-    'Status es 200': (r) => r.status === 200,
-  });
+    visitHomePage();
 
-  sleep(1);
+    sleep(1);
+
 }

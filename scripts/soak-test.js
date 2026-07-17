@@ -1,7 +1,8 @@
 //
 
 import http from 'k6/http';
-import { check, sleep } from 'k6';
+import { visitHomePage } from '../outils/auth.js';
+import { sleep } from 'k6';
 
 export const options = {
   stages: [
@@ -13,12 +14,8 @@ export const options = {
 
 export default function () {
 
-  const response = http.get('https://blazedemo.com/');
+    visitHomePage();
 
-  check(response, {
-    'Status es 200': (r) => r.status === 200,
-  });
-
-  sleep(1);
+    sleep(1);
 
 }
