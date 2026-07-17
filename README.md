@@ -245,16 +245,6 @@ Overall, the application proved capable of handling different traffic patterns w
 
 Run each performance scenario using K6:
 
-```bash
-k6 run .\scripts\smoke-test.js
-
-k6 run .\scripts\load-test.js
-
-k6 run .\scripts\stress-test.js
-
-k6 run .\scripts\spike-test.js
-
-k6 run .\scripts\soak-test.js
 
 ---
 
