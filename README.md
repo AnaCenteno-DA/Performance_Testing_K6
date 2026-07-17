@@ -49,6 +49,7 @@ This approach increased maintenance effort because any future change needed to b
 ## After Refactoring
 
 Reusable functionality was extracted into a shared helper:
+
 outils/
 └── auth.js
 
